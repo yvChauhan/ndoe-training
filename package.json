@@ -1,0 +1,38 @@
+{
+  "name": "node-training",
+  "version": "0.0.1",
+  "description": "Explore node, with express and mysql and mongoDB",
+  "main": "server.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yvChauhan/ndoe-training.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "mysql2",
+    "mongoDb",
+    "CRUD",
+    "rest",
+    "api"
+  ],
+  "author": "yVc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yvChauhan/ndoe-training/issues"
+  },
+  "homepage": "https://github.com/yvChauhan/ndoe-training#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.10.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
