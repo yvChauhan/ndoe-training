@@ -1,0 +1,15 @@
+<header>
+    <nav class="nav nav-pills flex-row bg-dark p-2 justify-content-between">
+        <a class="nav-link <%= '/' === redirection ? 'logo__active' : 'logo' %>" href="/" aria-current="page">
+            <img src="/images/logo_dark.png" alt="Logo" height="56"/>
+        </a>
+        <div class="d-flex flex-row align-items-center">
+            <% navigation.forEach(menu => { %>
+                <a class="nav-link <%= menu.link === redirection ? 'active' : '' %>" href="<%= menu.link %>" aria-current="page">
+                    <%= menu.label %>
+                </a>
+            <% }) %>
+        </div>
+        
+    </nav>
+</header>
