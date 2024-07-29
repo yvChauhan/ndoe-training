@@ -1,52 +1,16 @@
 import express from "express";
 
-import { products } from "../database/database.mjs";
+
+import { addProduct, getProductDetails, getProducts, modifyProduct, removeProduct } from "../controller/products.mjs";
 
 export const productsRouter = express.Router();
 
-app.get("/", (req, res) => {
-  res.json(200).json({ data: { products } });
-});
+productsRouter.get("/", getProducts);
 
-app.post("/", (req, res) => {
-  const { code, title, price, description, category, image, promotion, stock } =
-    req.body;
-  const data = {
-    code,
-    title,
-    price,
-    description,
-    category,
-    image,
-    promotion,
-    stock,
-    rating: {},
-  };
-  products.push(data);
-  res.json(201).json({ data: { data } });
-});
+productsRouter.get('/:code', getProductDetails);
 
-app.patch("/", (req, res) => {
-  const { code, title, price, description, category, image, promotion, stock } =
-    req.body;
-  let product = products.find((item) => item.code === code);
-  product = {
-    ...product,
-    title,
-    price,
-    description,
-    category,
-    image,
-    promotion,
-    stock,
-    rating: {},
-  };
-  products.push(data);
-  res.json(201).json({ data: { data } });
-});
+productsRouter.post("/", addProduct);
 
-app.delete("/", (req, res) => {
-  const { code } = req.body;
-  products = products.filter((item) => item.code === code);
-  res.json(201).json({ data: { data } });
-});
+productsRouter.patch("/", modifyProduct);
+
+productsRouter.delete("/", removeProduct);
