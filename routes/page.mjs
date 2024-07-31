@@ -48,7 +48,7 @@ for (const page in REDIRECTION) {
       const pageObject = {
         ...getDataForPage(route, route, title, req),
       };
-      res.render(key, pageObject);
+      res.status(200).render(key, pageObject);
     });
   }
 }

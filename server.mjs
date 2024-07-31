@@ -23,8 +23,8 @@ app.use(urlencoded({ extended: true }));
 app.use(json());
 app.use(morgan("dev"));
 
-app.use('/cart', cartRouter);
-app.use('/product', productsRouter);
+// app.use('/cart', cartRouter);
+// app.use('/product', productsRouter);
 app.use('/', pageRouter);
 
 
