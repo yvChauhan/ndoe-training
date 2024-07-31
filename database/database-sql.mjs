@@ -1,0 +1,1 @@
+"Insert into products (title, price, image, description)"

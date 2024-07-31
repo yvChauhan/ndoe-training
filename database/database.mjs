@@ -5,7 +5,7 @@ export const links = [
   { link: "/add-product", label: "Add product", role: "admin" },
   { link: "/login", label: "Login", role: "" },
   { link: "/order-confirmation", label: "Order Confirmation", role: "" },
-  { link: "/cart", label: "Cart", role: "user" },
+  { link: "/checkout", label: "Checkout", role: "user" },
   { link: "/product-detail", label: "Product Details Page", role: "" },
   { link: "/search", label: "Search Page", role: "" },
 ];
@@ -16,9 +16,9 @@ export const REDIRECTION = {
   LOGIN: "/login",
   ORDER_CONFIRMATION: "/order-confirmation",
   ADD_PRODUCT: "/add-product",
-  CART: "/cart",
+  CART: "/checkout",
   HOME: "/",
-  PDP: "/product-detail",
+  PDP: "/product-detail/:id",
   SEARCH: "/search",
 };
 
@@ -32,7 +32,7 @@ export const LABELS = {
     value: "Order Confirmation",
   },
   ADD_PRODUCT: { key: "add-product", value: "Add Product" },
-  CART: { key: "cart", value: "Cart" },
+  CART: { key: "checkout", value: "checkout" },
   PDP: {
     key: "product-detail",
     value: "Products Details Page",

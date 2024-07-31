@@ -6,6 +6,12 @@
     opacity: 80%;
 }
 
+.checkout__image {
+    height: 100px;
+    width: auto;
+}
+
+
 .footer {
     position: fixed;
     bottom: 0;

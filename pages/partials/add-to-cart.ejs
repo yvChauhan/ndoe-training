@@ -1,24 +1,3 @@
-<script>
-    function handleAddToCart() {
-        const code = '<%- product.code %>';
-        const options = {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify({code, quantity: 1})
-        }
-        fetch('http://localhost:3000/cart', options).then( response => {
-            if(!response.ok) {
-                // Error
-            }
-            console.log('Product added into cart');
-        }).finally(() => {
-           
-        });
-    }
-</script>
-
-<button type="button" class="btn btn-primary w-100" onclick="handleAddToCart()">
+<button type="button" class="btn btn-primary w-100" onclick="handleAddToCart('<%= code %>')">
     Add to Cart
 </button>

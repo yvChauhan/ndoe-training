@@ -1,20 +1,25 @@
 import express from 'express';
 
-import { cart } from "../database/database.mjs";
+import { cart, products } from "../database/database.mjs";
 
 export const cartRouter = express.Router();
 
-app.post('/', (req, res) => {
+cartRouter.post('/', (req, res) => {
     const {code, quantity} = req.body;
     cart.push({code, quantity});
     res.status(200).json({data: {code, quantity}});
 });
 
-app.get('/', (req, res) => {
-  res.status(200).json({data: cart});
+cartRouter.get('/', (req, res) => {
+  const carts = products.filter(product => {
+    if (cart.find(cartItem => product.code.toString() === cartItem.code)) {
+      return product;
+    }
+  });
+  res.status(200).json({data: carts});
 });
 
-app.patch('/', (req, res) => {
+cartRouter.patch('/', (req, res) => {
   const {code, quantity} = req.body;
   const index = cart.findIndex(entry => entry.code === code);
   if(index !== -1) {
@@ -26,7 +31,7 @@ app.patch('/', (req, res) => {
   }
 });
 
-app.put('/', (req, res) => {
+cartRouter.put('/', (req, res) => {
   const {code, quantity} = req.body;
   let cartItem = cart.find(entry => entry.code === code);
   if(cartItem) {
@@ -38,7 +43,7 @@ app.put('/', (req, res) => {
   res.status(200).json({data: {...cartItem}});
 });
 
-app.delete('/', (req, res) => {
+cartRouter.delete('/', (req, res) => {
   const {code} = req.body;
   cart = cart.filter(entry => entry.code === code);
   res.status(200).json({data: {code, msg: 'Item removed'}});

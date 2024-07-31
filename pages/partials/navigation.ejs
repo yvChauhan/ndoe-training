@@ -1,11 +1,4 @@
 <header>
-    <script>
-        function handleSearchClick(event) {
-            if(event.key === 'Enter') {
-                window.location.href = `/search?key=${event.target.value}`;
-            }
-        }
-    </script>
     <nav class="nav nav-pills flex-row bg-dark p-2 justify-content-between align-items-center">
         <a class="nav-link <%= '/' === redirection ? 'logo__active' : 'logo' %>" href="/" aria-current="page">
             <img src="/images/logo_dark.png" alt="Logo" height="56" />

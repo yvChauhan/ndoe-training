@@ -3,6 +3,7 @@ import bp from "body-parser";
 import morgan from "morgan";
 import { cartRouter } from "./routes/cart.mjs";
 import { productsRouter } from "./routes/products.mjs";
+import { pageRouter } from "./routes/page.mjs";
 
 const PORT = process.env.port || "3000";
 const localHost = "localhost";
@@ -23,8 +24,8 @@ app.use(json());
 app.use(morgan("dev"));
 
 app.use('/cart', cartRouter);
-app.use('/products', productsRouter);
-app.use('/', productsRouter);
+app.use('/product', productsRouter);
+app.use('/', pageRouter);
 
 
 app.listen(PORT, () => {
